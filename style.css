@@ -108,7 +108,7 @@ body {
         color: #9DAEC2;
     }
 
-    & .share-icon {
+    & .share-btn {
         width: 2rem;
         height: 2rem;
         flex-shrink: 0;
@@ -120,13 +120,20 @@ body {
         position: relative;
         z-index: 1;
 
-        &::before {
+        display: flex;
+
+        & svg {
+            margin: 0 auto;
+            align-self: center;
+        }
+
+        /* &::before {
             content: url(images/icon-share.svg);
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
+        } */
     }
 }
 
@@ -176,8 +183,8 @@ body {
     /* transform: translate(-50%, -1.5rem); */
 
     transform-origin: 50% 150%;
-    transform: scale(1);
-
+    transform: scale(0);
+    transition: all 200ms ease-out;
 
     &::after {
         content: '';
@@ -273,5 +280,9 @@ body {
 
         display: flex;
         align-items: center;
+
+        transform: translateX(100%);
+
+        transition: transform 300ms ease-out;
     }
 }
